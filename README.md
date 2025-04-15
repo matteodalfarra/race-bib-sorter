@@ -1,0 +1,2 @@
+Con `cv2.imread("immagine.jpg")` l'immagine viene trasformata in un array per essere letta con `numpy`.
+Con `Image.open("img.jpg")` converto l'immagine in **PIL** per ottenere un'immagine ad alto livello.
