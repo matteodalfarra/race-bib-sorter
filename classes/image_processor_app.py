@@ -46,15 +46,24 @@ class ImageProcessorApp:
 
                     # print(f"\nfile: {file}")
                     # print(f"bounding box: {bbox}")
-                    for detection in result:
-                        text = detection[1]
-                        if text.isdigit():
-                            img_folder_path = self.output_path / text
-                            # print(f"numero: {text}")
-                            if not img_folder_path.exists():
-                                img_folder_path.mkdir(parents=True, exist_ok=True)
-                            shutil.copy(full_path, img_folder_path / file)
-                            self.category_counts[text] += 1
+
+                    if len(result) == 0:
+                        img_folder_path = self.output_path / "others"
+                        if not img_folder_path.exists():
+                            img_folder_path.mkdir(parents=True, exist_ok=True)
+                        shutil.copy(full_path, img_folder_path / file)
+                    else:
+                        for detection in result:
+                            text = detection[1]
+                            if text.isdigit():
+                                img_folder_path = self.output_path / text
+                                # print(f"numero: {text}")
+                                if not img_folder_path.exists():
+                                    img_folder_path.mkdir(parents=True, exist_ok=True)
+                                shutil.copy(full_path, img_folder_path / file)
+                                self.category_counts[text] += 1
+
+
 
             # elimina il file spostato
             # os.remove(full_path)
