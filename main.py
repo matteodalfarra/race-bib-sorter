@@ -1,9 +1,12 @@
-from classes.race_bib_processor import RaceBibProcessor
+from classes.image_processor_app import ImageProcessorApp
 
-if __name__ == "__main__":
-    # get folder path
-    print("Folder path:")
-    folder = input()
+if __name__ == '__main__':
+    print('Folder path:')
+    path = input()
 
-    processor = RaceBibProcessor(folder)
-    processor.process_images()
+    print('Folder output:')
+    path_output = input()
+    model_path = './models/model.pt'
+
+    app = ImageProcessorApp(model_path, path, path_output)
+    app.process_images()
