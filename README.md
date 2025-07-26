@@ -12,7 +12,7 @@ race-bib-sorter è un tool che riordina automaticamente le foto di gare sportive
 
 ## Installazione
 ```bash
-git clone https://github.com/tuoutente/race-bib-sorter.git
+git clone https://github.com/matteodalfarra/race-bib-sorter.git
 cd race-bib-sorter
 pip install -r requirements.txt
 ```
